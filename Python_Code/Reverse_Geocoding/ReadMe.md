@@ -1,0 +1,5 @@
+- This was a project that I was working on during the summer of 2020. 
+- The goal of this was to take the data out of a snowflake database table and convert the latitude and longitude fields to county and state values in order to correlate these values with current confirmed covid cases in the given county.
+- The revealCounty.py file was my first attempt at doing the conversion by going through one record at a time and calling an external API. 
+- The batchRevealCounty.py was trying to accomplish the same goal but rather than doing it one by one it would take batches out of the table and convert them. 
+- The sns_sqs_structure dirctory contains code attempting do the same conversion by taking advantage of a hub/worker system in aws and utilizing aws sqs and sns.

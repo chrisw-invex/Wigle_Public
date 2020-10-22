@@ -1,0 +1,4 @@
+- This code is meant to reverse geocode on a large database table
+- In order to process a lot of data I chose to take advantage of the aws sqs queue and sns topic technology in order to process the data
+- The idea was to distribute the data through an sqs queue to multiple ec2s for processing
+- There was one ec2 which was considered the "hub" and would publish the data to an sns topic with the endpoint of the queue 
