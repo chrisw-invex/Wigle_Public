@@ -1,8 +1,8 @@
 -- script that creates the table to store the reveal data
 use role sysadmin;
-use warehouse INCOMING_WH;
-use database Development_DB;
-use schema public;
+use warehouse ***;
+use database ***;
+use schema ***;
 
 create or replace file format gzip_format
   type = CSV
@@ -30,22 +30,22 @@ carrier string,
 make string,
 model string,
 app_id string,
-org_id string"DEVELOPMENT_DB"."PUBLIC"."REVEAL_DATA_RAW");
+org_id string"***"."***"."***");
 
 
 -- Create staging area to load COVID Tracker csv file
 --Takes 1.63 seconds to stage the data from one day
-CREATE or REPLACE STAGE Reveal_Data_stage
+CREATE or REPLACE STAGE ***
 --Edit this in order to upload more data
 url='s3://*****'
 credentials=(aws_key_id='*****' aws_secret_key='*****')
 file_format = gzip_format;
 
 --Takes 280 ms to remove the _SUCCESS file from one folder
-rm @Reveal_Data_stage/_SUCCESS;
+rm @***/_SUCCESS;
 
 
 --Takes 6 minutes 41 seconds to copy all the data from one folder into the table
-copy into REVEAL_DATA_RAW
-    from '@Reveal_Data_stage'
+copy into ***
+    from '@***'
     file_format = gzip_format;
