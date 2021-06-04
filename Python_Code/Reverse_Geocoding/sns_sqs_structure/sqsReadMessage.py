@@ -54,7 +54,7 @@ def revGeoPandas(x):
 client = boto3.client('sqs')
 
 #The sqs queue url to pull messages from
-queueURL = 'https://sqs.us-east-1.amazonaws.com/652239706161/Reveal_Data_Transfer'
+queueURL = '***'
 try:
     #Keeps going until there is an error which means that the queue is empty
     while True:
@@ -69,7 +69,7 @@ try:
         df = pd.DataFrame(values, columns =['Lat','Lon'])
         #Apply the function to the data
         df['Area'] = df.apply(revGeoPandas, axis = 1)
-        df.to_sql('reveal_location',engine,if_exists='append',index=False)
+        df.to_sql('***',engine,if_exists='append',index=False)
         
 except():
     print('Done')

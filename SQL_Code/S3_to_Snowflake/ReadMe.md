@@ -1,0 +1,1 @@
+- Script to move masses of data from csv files stored in an s3 to a Snowflake data warehouse.

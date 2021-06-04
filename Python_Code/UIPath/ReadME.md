@@ -1,0 +1,5 @@
+- This code was created to use the web scraping application UI Path.
+- UI Path is an application that can only run on Windows OS so the code of UIPath_EC2_to_S3.py was created to move the scraped results to an s3 bucket.
+- The csv files were then read into an aws mySQL RDS using the lambda function UIPath_Lambda.py.
+- The next step of this process is to run analysis on the values stored in the RDS.
+-The directory UIPath_xaml contains the xaml code to run the web scrape through the UI Path application.

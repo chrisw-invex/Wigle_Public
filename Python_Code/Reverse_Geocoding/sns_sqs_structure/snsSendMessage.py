@@ -6,7 +6,7 @@ from snowflake.connector.converter_null import SnowflakeNoConverterToPython
 
 def reverseGeocode(coordinates):
     try:
-        gis = GIS('http://www.arcgis.com', 'cwigle98', '9060hokie14873')
+        gis = GIS('http://www.arcgis.com', '***', '***')
         #result = rg.search(coordinates)
         results = reverse_geocode([coordinates[1],coordinates[0]])
         # result is a list containing ordered dictionary.
@@ -14,15 +14,15 @@ def reverseGeocode(coordinates):
     except():
         return {'Subregion':'','Region':''}
 
-SNOW_ACCOUNT = 'oja95667.us-east-1'
-SNOW_USER = 'CHRISW@INVEXTECHS.COM'
-SNOW_PASS = 'Invex906014873'
+SNOW_ACCOUNT = '***'
+SNOW_USER = '***'
+SNOW_PASS = '***'
 SNOW_FILE_FORMAT = 'DEFAULT_CSV'
-SNOW_DB = 'DEVELOPMENT_DB'
-SNOW_SCHEMA = 'PUBLIC'
+SNOW_DB = '***'
+SNOW_SCHEMA = '***'
 
 client = boto3.client('sns')
-topic = 'arn:aws:sns:us-east-1:652239706161:Reveal_Data_Transfer'
+topic = '***'
 
 ctx = snowflake.connector.connect(
             user=SNOW_USER,
@@ -33,7 +33,7 @@ ctx = snowflake.connector.connect(
             converter_class=SnowflakeNoConverterToPython
             )
 
-cur = ctx.cursor().execute("SELECT lat, lon FROM REVEAL_DATA_RAW;")
+cur = ctx.cursor().execute("SELECT lat, lon FROM ***;")
 ret = [1]
 while len(ret)>0:
     ret = cur.fetchmany(8000)
